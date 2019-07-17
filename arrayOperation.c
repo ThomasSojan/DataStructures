@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int array[100];
+
 int arrLength(int array[])
 {
     int length = 0;
@@ -33,7 +35,7 @@ void insertBeg(int array[],int l){
         
         
 
-         for(i=l-1;i>0;i--){
+         for(i=l-1;i>=0;i--){
                  array[i+1]=array[i];
          }
           array[0] = n;
@@ -42,17 +44,53 @@ void insertBeg(int array[],int l){
 
 }
 
+void insertend(int array[],int l){
+
+         int n,i;
+        printf("enter the no to be inserted:");
+        scanf("%d",&n);
+
+        array[l] = n;
+        
+        }
+
+void insertpos(int arr[],int l){
+        int pos,n,i;
+        printf("enter the position: ");
+        scanf("%d",&pos);
+        printf("enter the value: ");
+        scanf("%d",&n);
+        for( i=l-1;i<=pos-1;i--){
+                array[i+1]=array[i];
+        }
+        array[pos-1]=n;
+
+}
+
+void delete(int array[],int l){
+        int i,pos,value;
+         printf("enter the position: ");
+          scanf("%d",&pos);
+        value = array[pos-1];
+
+           if(pos>=l+1)
+            printf("not possible\n");
+           else{
+               for( i=pos-1;i<l-1;i++){
+                  array[i]=array[i+1];
+            }
+            printf(" deleted value is %d",value);
+
+          }
+      }   
 
 
 
 
 
-
-
-
-int main(int argc, char *argv[]){
+int main(){
     
-    int array[100],limit,i,ch,l;
+    int limit,i,ch,l;
     //int *array
 
     printf("Enter the limit: ");
@@ -74,9 +112,10 @@ int main(int argc, char *argv[]){
        printf("\n*****MENU*****\n");
        printf("\n1: Display Array\n");
        printf("2: Insert Beg\n");
-     /*  printf("3: Insert End\n");
-       printf("4: Insert Pos\n"); */
-       printf("5: Exit\n");
+       printf("3: Insert End\n");
+       printf("4: Insert Pos\n");
+       printf("5: Delete element\n"); 
+       printf("6: Exit\n");
        printf("Enter your choice: ");
         scanf("%d",&ch); 
        switch (ch)
@@ -87,11 +126,18 @@ int main(int argc, char *argv[]){
         case 2:l=arrLength(array);
                insertBeg(array,l);
                break;
-     /*  case 3: insertend();
+       case 3: l=arrLength(array);
+               insertend(array,l);
                break;  
-       case 4: insertpos();
-               break; */ 
-       case 5: exit(0) ;
+       case 4: l = arrLength(array); 
+               insertpos(array,l);
+               break;  
+       case 5 : l = arrLength(array);
+                 delete(array,l);
+
+
+
+       case 6: exit(0) ;
                break;         
        default:
            break;
@@ -101,7 +147,6 @@ int main(int argc, char *argv[]){
 
   return 0;
 }
-
 
    
    
