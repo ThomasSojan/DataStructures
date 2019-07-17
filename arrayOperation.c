@@ -76,7 +76,7 @@ void delete(int array[],int l){
            if(pos>=l+1)
             printf("not possible\n");
            else{
-               for( i=pos-1;i<l-1;i++){
+               for( i=pos-1;i<l;i++){
                   array[i]=array[i+1];
             }
             printf(" deleted value is %d",value);
@@ -134,6 +134,7 @@ int main(){
                break;  
        case 5 : l = arrLength(array);
                  delete(array,l);
+                 break;
 
 
 
@@ -147,6 +148,22 @@ int main(){
 
   return 0;
 }
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
 
    
    
