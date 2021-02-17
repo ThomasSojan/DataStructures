@@ -71,6 +71,8 @@ public class SinglyLinkedList {
         }
 
     }
+    
+    
 
 // DELETE NODE AT START POSITION
     void deleteStart(){
@@ -186,6 +188,24 @@ public class SinglyLinkedList {
         }
         System.out.println(current.data);
         System.out.println("Head :"+head.data+" Tail :"+tail.data+" Length :"+length);
+
+    }
+    
+    //Linked List Reverse (CROSSROADS)
+
+    void reverse(){
+      Node current = head;
+      Node previousNode = null;
+      Node nextNode =null;
+
+      while(current != null){
+            nextNode = current.next;
+            current.next = previousNode;
+            previousNode = current;
+            current = nextNode;
+      }
+      head = previousNode;
+
 
     }
     public static void main(String args[]){
