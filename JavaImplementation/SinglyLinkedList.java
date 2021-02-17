@@ -213,23 +213,14 @@ public class SinglyLinkedList {
         l1.insertStart(100);
         l1.insertStart(200);
         l1.insertStart(300);
-        l1.insertEnd(90);
-        l1.insertEnd(80);
-        l1.insertEnd(40);
         l1.insertStart(400);
-        l1.insertPosition(7,60);
+        l1.insertStart(500);
+        l1.insertStart(600);
         l1.display();
-        l1.insertPosition(3,150);
-        l1.insertPosition(0,500);
-        l1.insertPosition(10,50);
-        l1.deleteStart();
-        l1.deleteEnd();
-        l1.deletePos(8);
-        l1.deletePos(0);
-        l1.deletePos(2);
-        l1.updatePos(0,120);
-        l1.updatePos(5,70);
-        l1.updatePos(1,110);
+        l1.reverse();
+        l1.display();
+
+        l1.reverse();
 
 
         l1.display();
