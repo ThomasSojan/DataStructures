@@ -2,6 +2,8 @@ package com.stringOperations;
 
 import java.util.Arrays;
 
+
+// Sorting based on String Length.
 public class SubstringSort {
     public static String[] subStrSort(String[] subStrings){
 
